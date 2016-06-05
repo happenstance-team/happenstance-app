@@ -1,4 +1,64 @@
 Rails.application.routes.draw do
+  get 'conversations/index'
+
+  get 'conversations/new'
+
+  get 'conversations/create'
+
+  get 'conversations/edit'
+
+  get 'conversations/update'
+
+  get 'conversations/destroy'
+
+  get 'messages/index'
+
+  get 'messages/new'
+
+  get 'messages/create'
+
+  get 'messages/edit'
+
+  get 'messages/update'
+
+  get 'messages/destroy'
+
+  get 'user_interests/index'
+
+  get 'user_interests/new'
+
+  get 'user_interests/create'
+
+  get 'user_interests/edit'
+
+  get 'user_interests/update'
+
+  get 'user_interests/destroy'
+
+  get 'matches/index'
+
+  get 'matches/new'
+
+  get 'matches/create'
+
+  get 'matches/edit'
+
+  get 'matches/update'
+
+  get 'matches/destroy'
+
+  get 'interests/index'
+
+  get 'interests/new'
+
+  get 'interests/create'
+
+  get 'interests/edit'
+
+  get 'interests/update'
+
+  get 'interests/destroy'
+
   devise_for :users, :controllers => { registrations: 'registrations' }
   root to: 'pages#home'
   # The priority is based upon order of creation: first created -> highest priority.
