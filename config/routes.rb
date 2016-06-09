@@ -6,8 +6,9 @@ Rails.application.routes.draw do
   get 'about' => 'pages#about'
   get 'faq' => 'pages#faq'
 
-  resources :conversations
-  resources :messages
+  resources :conversations, only: [:index] do
+    resources :messages, only: :create
+  end
   resources :interests
   resources :matches
   resources :interests
