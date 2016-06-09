@@ -3,7 +3,7 @@ var MessageListItem = React.createClass({
     return (
       <div className="message-container flexbox-start flex-item">
         <span className="flex-item-shrink">
-          <img src={this.props.message.writer_avatar_url} className="avatar-square-small" />
+          <img src={this.props.message.writer_avatar_url} className="avatar" />
         </span>
         <div className="message-content flex-item flexbox-columns">
           <ul className="message-header list-unstyled list-inline flex-item">
