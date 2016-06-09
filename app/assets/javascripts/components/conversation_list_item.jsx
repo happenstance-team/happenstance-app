@@ -16,7 +16,7 @@ var ConversationListItem = React.createClass({
     return (
       <div className={divClasses} onClick={this.handleClick}>
         <span className="flex-item-shrink">
-          <img src={this.props.conversation.other_user_picture_url} className="avatar-square" />
+          <img src={this.props.conversation.other_user_picture_url} className="avatar" />
         </span>
         <div className="conversation-preview flexbox-columns flex-item">
           <ul className="conversation-header list-unstyled list-inline flex-item">

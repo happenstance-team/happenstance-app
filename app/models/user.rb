@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   has_many :interests, :through => :user_interests
-  has_many :messages
+  has_many :messages, dependent: :destroy
 
   def conversations
     Conversation.includes(:messages)
