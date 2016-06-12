@@ -12,6 +12,6 @@ Rails.application.routes.draw do
   resources :interests
   resources :matches
   resources :interests
-  resources :user_interests
+  resources :interests_users
 
 end
