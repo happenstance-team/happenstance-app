@@ -1,6 +1,8 @@
 User.destroy_all
 Conversation.destroy_all
 Message.destroy_all
+Interest.destroy_all
+UserInterest.destroy_all
 
 yoann = User.create!(email: "yoann@happenstance.co", password: "azertyuiop", first_name: "Yoann", avatar_url: "http://i.imgur.com/CvK0VkI.jpg")
 sarah = User.create!(email: "sarah@happenstance.co", password: "azertyuiop", first_name: "sarah", avatar_url: "http://i.imgur.com/jOGeCVC.jpg")
@@ -29,3 +31,13 @@ m10 = Message.create!(user: alexandre, conversation: c4, content: "Hello")
 m11 = Message.create!(user: happbot, conversation: c5, content: "Quoi de neuf ?")
 m12 = Message.create!(user: happbot, conversation: c6, content: "Tu fais quoi demain ?")
 m12 = Message.create!(user: yoann, conversation: c7, content: "Yo!")
+
+i1 = Interest.create!(name: "books")
+i2 = Interest.create!(name: "music")
+i3 = Interest.create!(name: "coffee")
+
+UserInterest.create!(user: yoann, interest: i1)
+UserInterest.create!(user: yoann, interest: i2)
+UserInterest.create!(user: yoann, interest: i3)
+
+Match.create!(user1: yoann, user2: lisa)

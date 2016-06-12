@@ -3,7 +3,8 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-  has_many :interests, :through => :user_interests
+  has_many :user_interests, dependent: :destroy
+  has_many :interests, through: :user_interests, dependent: :destroy
   has_many :messages, dependent: :destroy
 
   def conversations

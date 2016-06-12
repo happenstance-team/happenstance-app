@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160608192507) do
+ActiveRecord::Schema.define(version: 20160612080318) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,6 +39,9 @@ ActiveRecord::Schema.define(version: 20160608192507) do
     t.datetime "updated_at", null: false
   end
 
+  add_index "matches", ["user1_id"], name: "index_matches_on_user1_id", using: :btree
+  add_index "matches", ["user2_id"], name: "index_matches_on_user2_id", using: :btree
+
   create_table "messages", force: :cascade do |t|
     t.text     "content"
     t.integer  "conversation_id"
@@ -52,10 +55,10 @@ ActiveRecord::Schema.define(version: 20160608192507) do
   add_index "messages", ["user_id"], name: "index_messages_on_user_id", using: :btree
 
   create_table "user_interests", force: :cascade do |t|
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.integer  "user_id"
-    t.integer  "user_interest"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.integer  "interest_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -82,4 +85,6 @@ ActiveRecord::Schema.define(version: 20160608192507) do
 
   add_foreign_key "messages", "conversations"
   add_foreign_key "messages", "users"
+  add_foreign_key "user_interests", "interests"
+  add_foreign_key "user_interests", "users"
 end
